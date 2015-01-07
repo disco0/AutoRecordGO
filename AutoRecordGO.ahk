@@ -75,13 +75,15 @@ MonitorConsoleLog:
        }
  
       if (RegExMatch(LastLine,"i)Recording to")) {
-          SoundBeep
+          ;SoundBeep
           ;SoundPlay recording_started.mp3
+	  ComObjCreate("SAPI.SpVoice").Speak("Recording started")
       }
  
       if (RegExMatch(LastLine,"i)Completed demo")) {
-          SoundBeep
+          ;SoundBeep
           ;SoundPlay replay_saved.mp3
+	  ComObjCreate("SAPI.SpVoice").Speak("Recording saved")
       }
    }
  
